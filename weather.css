@@ -1,0 +1,159 @@
+/* Space Themed Background with Stars */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed, radial-gradient(circle at center, #0a0a23, #000000);
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Animated Stars */
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: twinkle 2s infinite alternate;
+}
+
+/* Glassmorphic Container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    animation: bounceFadeIn 1s ease-in-out;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Bounce and Fade-in Animation */
+@keyframes bounceFadeIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Input Field */
+input {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    box-shadow: 0px 0px 10px #4facfe;
+}
+
+/* Button */
+button {
+    padding: 12px 20px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00c6ff;
+    transform: scale(1.05);
+}
+
+/* Weather Information */
+.weather-info {
+    margin-top: 20px;
+    font-size: 18px;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+/* Slide-in Effect for Weather Info */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: none;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Weather Icon */
+.weather-icon {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    animation: bounce 1s infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Weather Status Message */
+.weather-status {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    animation: fadeInBounce 1.2s ease-in-out;
+}
+
+/* Fade-in Bounce Effect */
+@keyframes fadeInBounce {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Different styles for weather conditions */
+.weather-status.sunny {
+    color: yellow;
+    text-shadow: 0px 0px 10px rgba(255, 255, 0, 0.8);
+}
+
+.weather-status.rainy {
+    color: lightblue;
+    text-shadow: 0px 0px 10px rgba(0, 191, 255, 0.8);
+}
+
+.weather-status.cold {
+    color: cyan;
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
